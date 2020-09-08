@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>    
+<style>
+.button2 {
+    background: none;
+    border:none;
+    padding: 2vh!important;
+    color: white;
+    font-family:perpetua;
+    font-size:3.1vh;
+    border-radius:10px;
+    onmouseover:"";
+    cursor:pointer;
+    }
+.button2:active {
+    border:none;
+    outline:none;
+    }
+.button2:focus {
+    outline:none;
+    }
+.button2:hover {
+    color: #000000;
+    text-decoration:underline;
+    }
+.textfield {
+    width:250px;
+    height:4vh;
+    }
+.textfield:focus {
+    outline:none;
+    border:none;
+    }
+.textfield:hover {
+    border:10%;
+    border-color:black;
+    }
+    <title style="text-decoration:italic">When is an app not an app?</title>
+</style>
+</head>
+<body style="background:#41215A;">
+    <div style="position:absolute">
+        <div style="position:relative">
+            <h1 style="font-size:7vh; width:90vw; font-family:perpetua; color:white; position:relative; left:5vw">AJAR System Login</h1>
+            <div style="position:relative; width:100vw">
+                <p style="font-size:3vh; width:90vw; font-family:perpetua; color:white; position:relative; top:-4vh; left:5vw"><i >Academic Journal Article Recommender System</i></p>
+                <div>
+                    <form action="/login" style="max-width:100%; height:30%; position:absolute; left:15%; top:25%">
+                        <p style="color:white; font-size:3vh; font-family:perpetua;">
+                            <i for="name">User name</i><br>
+                            <input class="textfield" type="text" name="name">
+                        </p>
+                        <p>
+                            <i for="pass" style="color:white; font-size:3vh; font-family:perpetua;">Password</i><br>
+                            <input class="textfield" type="text" name="pass">
+                        </p>        
+                        <p><button style="position:absolute; top:21vh;" class="button2" name="button" type="submit" value='login'>Log In</button></p>
+                        <p><button style="position:absolute; top:29vh;" class="button button2" name="button" type="submit" value='register'>Register</button></p>
+                    </form>
+                    <h3 style="font-size:3.5vh; color:red; position:absolute; left:15%; top:31vh">{{error}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

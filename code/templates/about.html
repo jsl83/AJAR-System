@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button2 {
+    background: none;
+    border:none;
+    height:100%;
+    color: white;
+    font-family:perpetua;
+    font-size:2.5vh;
+    onmouseover:"";
+    cursor:pointer;
+    }
+.button2:active {
+    border:none;
+    outline:none;
+    }
+.button2:focus {
+    outline:none;
+    }
+.button2:hover {
+    background:#793BAA!important;
+    }
+.textfield {
+    width:150%;
+    height:12%;
+    }
+.textfield:focus {
+    outline:none;
+    border:none;
+    }
+.textfield:hover {
+    border:20%;
+    border-color:white;
+    }
+.sidenav {
+    max-width:1100px;
+    width: 100%;
+    height: 5%;
+    background:#423948;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    border-bottom:2px solid black !important;
+}
+
+</style>
+</head>
+<body style="background:#41215A;">
+    <div style="border-bottom:2px solid black !important; z-index:1;
+background:#423948; width:100%; height:5%; position:fixed; top:0; left:0">
+    </div>
+    <div class="sidenav">       
+        <form action="/search">
+            <p>
+                <input placeholder="   Search Articles" style="position:absolute; left:71%; top:13%; height:74%; width:26%; border-radius:1vh" type="text" name="query">
+            </p>
+        </form>
+        <form action="/nav_menu">
+            <p><button style="width:15%; position:absolute; left:0%; top:0%" class="button2" type="submit" value="user_home" name="button">Home</button></p>
+            <p><button style="position:absolute; width:20%; left:15%; top:0%" class="button2" type="submit" value="favorites" name="button">Favorites</button></p>
+            <p><button style="position:absolute; width:17%; left:35%; top:0%"class="button2" type="submit" value="journals" name="button">Journals</button></p>
+            <p><button style="position:absolute; left:52%; width:16%; background:#41215A; top:0%"class="button2" type="submit" value="about" name="button">About</button></p>
+        </form>
+    </div>
+    <div style="position:absolute; left:0; top:5%; background:#F6E9BF; width:100vw; color:#41215A">
+        <div style="position:relative; background:#F6E9BF; width:100vw">
+            <h1 style="position:relative; width:95vw; left:5%; font-size:3.5vh">What is AJAR?</h1>
+                <div style="position:relative; background:#F6E9BF; width:100vw">
+                <p style="position:relative; left:5%; max-width:800px; width:90vw; font-size:2.2vh">AJAR is an application designed to help researchers find relevant research papers as they are published automatically using machine learning. Publications are collected daily using the Springer Nature API and compared with a user's favorited articles to assess similarity and provide recommendations. For more information about the Springer API, please visit their website below.</p>
+                <div style="position:relative; background:#F6E9BF; width:100vw; padding-bottom:25px">
+                    <a style="position:relative; left:5%; top:105%; font-size:2.2vh; color:blue" href="https://dev.springernature.com/">Springer Nature API Portal</a>
+                    <div style="position:absolute; left:0; top:100%; width:90vw; color:white">
+                        <h1 style="position:relative; left:5%; font-size:3.5vh">Article Search Parameters</h1>
+                        <div style="position:relative; width:90vw">
+                            <p style="position:relative; left:5%; max-width:800px; width:90vw; font-size:2.2vh">AJAR supports the following keywords when conducting article searches:</p>
+                            <ul style="position:relative; left:5%; width:80vw; top:0%; color:white; font-size:2.1vh"><li>Date: returns articles published on the specified date</li><li>From: returns articles published on or after the specified date</li><li>To: returns articles published before or on the specified date</li><li>Journal: returns articles published in the specified journal</li>
+                            </ul>
+                            <div style="position:relative; width:90vw">
+                                <p style="position:relative; left:5%; top:105%; max-width:800px; width:90vw; font-size:2.2vh; color:white">Date parameters are in YYYY-MM-DD form. To use a search keyword, include keyword:&lt;parameter> in your query (no spaces). For example,<br><br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"lung cancer from:2020-08-01 to:2020-08-31"</i><br><br>will find all articles including both lung and cancer published in August 2020.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

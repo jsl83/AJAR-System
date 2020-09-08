@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<style>
+.button1 {
+    width:90vw;
+    max-width:750px;
+    background: #423948;
+    border:none;
+    padding: 1vh!important;
+    color: white;
+    font-family:perpetua;
+    font-size:2vh;
+    border-radius:2px;
+    onmouseover:"";
+    cursor:pointer;
+    text-align:left;
+    }
+.button1:active {
+    border:none;
+    outline:none;
+    }
+.button1:focus {
+    outline:none;
+    }
+.button3 {
+    width:125px;
+    max-width:750px;
+    background: None;
+    border:none;
+    padding: 1vh!important;
+    color: #41215A;
+    font-family:perpetua;
+    font-size:2.4vh;
+    border-radius:2px;
+    onmouseover:"";
+    cursor:pointer;
+    }
+.button3:active {
+    border:none;
+    outline:none;
+    }
+.button3:focus {
+    outline:none;
+    }
+.button3:hover {
+    color: #000000;
+    text-decoration:underline;
+    }
+.button2 {
+    background: none;
+    border:none;
+    height:100%;
+    color: white;
+    font-family:perpetua;
+    font-size:2.5vh;
+    onmouseover:"";
+    cursor:pointer;
+    }
+.button2:active {
+    border:none;
+    outline:none;
+    }
+.button2:focus {
+    outline:none;
+    }
+.button2:hover {
+    background:#793BAA!important;
+    }
+.textfield {
+    width:150%;
+    height:12%;
+    }
+.textfield:focus {
+    outline:none;
+    border:none;
+    }
+.textfield:hover {
+    border:20%;
+    border-color:white;
+    }
+.sidenav {
+    max-width:1100px;
+    width: 100%;
+    height: 5%;
+    background:#423948;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    border-bottom:2px solid black !important;
+}
+</style>
+<head>
+    <title>AJAR Home</title>
+</head>
+<body style="background:#41215A;">
+    <div style="border-bottom:2px solid black !important; z-index:1;
+background:#423948; width:100%; height:5%; position:fixed; top:0; left:0">
+    </div>
+    <div class="sidenav">       
+        <form action="/search">
+            <p>
+                <input placeholder="   Search Articles" style="position:absolute; left:71%; top:13%; height:74%; width:26%; border-radius:1vh" type="text" name="query">
+            </p>
+        </form>
+        <form action="/nav_menu">
+            <p><button style="width:15%; position:absolute; left:0%; top:0%" class="button2" type="submit" value="user_home" name="button">Home</button></p>
+            <p><button style="position:absolute; width:20%; left:15%; top:0%" class="button2" type="submit" value="favorites" name="button">Favorites</button></p>
+            <p><button style="position:absolute; width:17%; left:35%; top:0%"class="button2" type="submit" value="journals" name="button">Journals</button></p>
+            <p><button style="position:absolute; left:52%; width:16%; top:0%"class="button2" type="submit" value="about" name="button">About</button></p>
+        </form>
+    </div>
+    <div style="position:absolute; left:0; top:5%; background:#F6E9BF; width:100vw; color:#41215A">
+        <div style="position:relative; background:#F6E9BF; width:100vw">
+            <h1 style="position:relative; left:5%; max-width:800px; width:90vw; font-size:4vh">{{title}}</h1>
+            <div style="position:relative">
+                <p style="position:relative; left:5%; max-width:800px; width:90vw; font-size:2.2vh"><i>{{journal}}</i><br>{{date}}</p>
+                <div style="position:relative; background:#F6E9BF; width:100vw">
+                    <p style="position:relative; left:5%; max-width:800px; width:90vw; font-size:2.2vh">{{authors}}</p>
+                    <div style="position:relative; background:#F6E9BF; width:100vw">
+                        <a style="position:relative; left:5%; max-width:800px; width:90vw; font-size:2.2vh; color:blue" href="{{link}}">See full article</a>
+                        <div style="position:relative; background:#F6E9BF; width:100vw">
+                            <p style="position:relative; left:5%; max-width:800px; width:90vw; font-size:2.2vh">{{abstract}}</p>
+                            <div style="position:relative; background:#F6E9BF; width:100vw">
+                                    <form style="padding-bottom:55px; width:95vw" action="fave">
+                                        <button class="button3" style="position:absolute; left:5%" type="submit" name="button" value={{pid}}>{{favor}}</button>
+                                    </form>
+                                <div style="position:absolute; left:0; top:175%; width:100vw; color:white">
+                                    <h1 style="position:relative; left:5%; width:95vw; font-size:3.5vh"><u>Similar Articles</u><br><small>{{no_sim}}</small></h1>
+                                    <div style="position:relative; left:5%; width:90vw; padding-bottom:100px">
+                                        <form style="width:95vw" id="plist" action="/s_display">
+                                            {% for x in start %}
+                                            <p><button class="button1" name="button" type="submit" value="{{ids[x]}}">{{papers[x][0]}}<br><small><i>{{papers[x][1]}}</i></small></button></p>
+                                            {% endfor %}
+                                    </form>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

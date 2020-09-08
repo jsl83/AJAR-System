@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button1 {
+    width:90vw;
+    max-width:750px;
+    background: #423948;
+    border:none;
+    padding: 1vh!important;
+    color: white;
+    font-family:perpetua;
+    font-size:2vh;
+    border-radius:2px;
+    onmouseover:"";
+    cursor:pointer;
+    text-align:left;
+    }
+.button1:active {
+    border:none;
+    outline:none;
+    }
+.button1:focus {
+    outline:none;
+    }
+.button1:hover {
+    color: #000000;
+    }
+.button2 {
+    background: none;
+    border:none;
+    height:100%;
+    color: white;
+    font-family:perpetua;
+    font-size:2.5vh;
+    onmouseover:"";
+    cursor:pointer;
+    }
+.button2:active {
+    border:none;
+    outline:none;
+    }
+.button2:focus {
+    outline:none;
+    }
+.button2:hover {
+    background:#793BAA!important;
+    }
+.textfield {
+    width:150%;
+    height:12%;
+    }
+.textfield:focus {
+    outline:none;
+    border:none;
+    }
+.textfield:hover {
+    border:20%;
+    border-color:white;
+    }
+.sidenav {
+    max-width:1100px;
+    width: 100%;
+    height: 5%;
+    background:#423948;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    border-bottom:2px solid black !important;
+}
+
+</style>
+</head>
+<body style="background:#41215A;">
+    <div style="border-bottom:2px solid black !important; z-index:1;
+background:#423948; width:100%; height:5%; position:fixed; top:0; left:0">
+    </div>
+    <div class="sidenav">       
+        <form action="/search">
+            <p>
+                <input placeholder="   Search Articles" style="position:absolute; left:71%; top:13%; height:74%; width:26%; border-radius:1vh" type="text" name="query">
+            </p>
+        </form>
+        <form action="/nav_menu">
+            <p><button style="width:15%; position:absolute; left:0%; top:0%" class="button2" type="submit" value="home" name="button">Log Out</button></p>
+            <p><button style="position:absolute; width:20%; left:15%; top:0%" class="button2" type="submit" value="favorites" name="button">Favorites</button></p>
+            <p><button style="position:absolute; width:17%; left:35%; top:0%"class="button2" type="submit" value="journals" name="button">Journals</button></p>
+            <p><button style="position:absolute; left:52%; width:16%; top:0%"class="button2" type="submit" value="about" name="button">About</button></p>
+        </form>
+        </div>
+    <div style = "position:absolute; top:5%; left:0%; width:100%; height:30%; background:#F6E9BF">
+        <h1 style="position:absolute; left:5%; color:#41215A; font-size:5vh">Welcome to AJAR<h1>
+        <p style="position:absolute; top:25%; left:7%; color:#41215A; font-size:2.8vh"><i>Academic paper collector, organizer, recommender<br></i></p>
+        <p style="position:absolute; top:55%; left:5%; color:#41215A; font-size:2.8vh"><u>Daily Collection</u><br>{{number}} new articles added to database for {{date}}</p>
+    </div>
+    <div style = "position:absolute; left:0%; top:35%; height:30%; width:100%">
+        <p style="position:absolute; left:5%; top:0%; font-size:4vh; color:white"><u>Your Daily Recommendations</u></p>
+        <p style="position:absolute; left:5%; top:25%; font-size:3vh; color:white">{{rec_message}}</p>
+            
+        <form style="position:absolute; left:5%; top:35%; font-size:3vh; color:white" action="/s_display">
+            {% for x in start %}
+            <p><button class="button1" name="button" type="submit" value="{{ids[x]}}">{{papers[x][0]}}<br><small><i>{{papers[x][1]}}</i></small></button></p>
+            {% endfor %}
+        </form>
+    </div>
+</body>
+</html>
