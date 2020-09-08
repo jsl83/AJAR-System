@@ -97,7 +97,7 @@ The AJAR application can be accessed online at the ip address **18.220.169.23**
 
 The application is hosted by an Amazon Web Services EC2 instance, which conducts the daily paper collection as well as conducting all back-end operations. The process diagram for the application is described in figure 3.
 
-![](images/ajar.PNG)
+![](images/ajar.png)
 
 **Figure 3**. AJAR application process diagram
 
