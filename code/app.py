@@ -122,7 +122,7 @@ def get_plist(ids, start, stop, journal = False):
 
         return [[y[0], y[1]] for y in list(cursor.execute(sql_query).fetchall())]
     
-app.secret_key = b'\xcbl\x92r\xdb\xaa\xfb|<\xbf\x156\xaeM\n\xde'
+app.secret_key = [REDACTED]
 
 # Establish connection to SQL server
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=ga-cc12-s5.database.windows.net;DATABASE=capstone;UID=[REDACTED];PWD=[REDACTED]')
