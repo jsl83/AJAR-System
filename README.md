@@ -1,3 +1,5 @@
+# - SERVICES FOR THIS SYSTEM HAVE BEEN DISCONTINUED! -
+
 # The Academic Journal Article Recommender System (AJAR)
 
 - [Problem Statement](#Problem-Statement)
